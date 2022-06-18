@@ -6,7 +6,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    background: linear-gradient(#98dfaf, #fff);
+    background: #303030;
     text-align: center;
     font-family: Bali;
     color: #ef2d56;
@@ -38,7 +38,7 @@ main {
 #colour1::-webkit-color-swatch,
 #colour2::-webkit-color-swatch{
     border-radius: 5px;
-    border: 2px solid #404040;
+    border: 2px solid #707070;
 }
 
 .colour-selector-wrapper {
@@ -87,8 +87,18 @@ main {
     height: 8vh;
     color: #fff;
     font-weight: bold;
+    font-family: 'Quicksand', sans-serif;
+    text-shadow: 0 0 10px black;
     margin: 0;
     border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.colour-box:hover {
+    color: black;
+    text-shadow: 0 0 10px white;
 }
 
 @media (min-width: 450px){

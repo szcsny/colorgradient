@@ -17,7 +17,10 @@ btn.addEventListener("click", function(){
     let greendiff = getDiff(colour1[1], colour2[1]);
     let bluediff = getDiff(colour1[2], colour2[2]);
     for(let i=0; i<length; i++){
-        colours.push(`<p class="colour-box" style="background: rgb(${colour1[0]+i*reddiff},${colour1[1]+i*greendiff},${colour1[2]+i*bluediff});"></p>`)
+        let red = colour1[0]+i*reddiff;
+        let green = colour1[1]+i*greendiff;
+        let blue = colour1[2]+i*bluediff;
+        colours.push(`<p class="colour-box" style="background: rgb(${red},${green},${blue});">${rgbToHex(red, green, blue)}</p>`)
     }
     colourDiv.innerHTML = colours.join("");
     colours = [];
@@ -39,6 +42,10 @@ function hexToRGB(c){
     return [r, g, b];
 }
 
+function rgbToHex(r, g, b){
+    return `#${decToHex(r)}${decToHex(g)}${decToHex(b)}`
+}
+
 function hexToDec(num){
     let sum = 0;
     for(let i=0; i<hex.length; i++){
@@ -50,5 +57,13 @@ function hexToDec(num){
             sum += hex.indexOf(current);
         }
     }
+    return sum;
+}
+
+function decToHex(num){
+    let sum = "";
+    let first = Math.floor(num/16);
+    let second = num%16;
+    sum = hex[first] + hex[second];
     return sum;
 }
