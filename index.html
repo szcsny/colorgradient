@@ -4,25 +4,27 @@
         <title>Colour palette creator</title>
     </head>
     <body>
-        <h1>Pick your colours</h1>
-        <div class="large-wrapper">
-            <div class="colours-menu">
-                <div class="colour-selector-wrapper">
-                    <div class="colour-selector">
-                        <h2>Colour 1:</h2>
-                        <input id="colour1" type="color">
+        <main>
+            <h1>Pick your colours</h1>
+            <div class="large-wrapper">
+                <div class="colours-menu">
+                    <div class="colour-selector-wrapper">
+                        <div class="colour-selector">
+                            <h2>Colour 1:</h2>
+                            <input id="colour1" type="color">
+                        </div>
+                        <div class="colour-selector">
+                            <h2>Colour 2:</h2>
+                            <input id="colour2" type="color">
+                        </div>
                     </div>
-                    <div class="colour-selector">
-                        <h2>Colour 2:</h2>
-                        <input id="colour2" type="color">
-                    </div>
+                    <button id="start-btn">create palette</button>
                 </div>
-                <button id="start-btn">create palette</button>
+                <div id="colours">
+                    <!--<p class="colour-box" style="background: red;">-->
+                </div>
             </div>
-            <div id="colours">
-                <!--<p class="colour-box" style="background: red;">-->
-            </div>
-        </div>
+        </main>
         <script src="index.pack.js"></script>
     </body>
 </html>
