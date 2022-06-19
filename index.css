@@ -33,6 +33,7 @@ main {
     width: 100px;
     height: 50px;
     background: transparent;
+    cursor: pointer;
 }
 
 #colour1::-webkit-color-swatch,
@@ -101,7 +102,7 @@ main {
     text-shadow: 0 0 10px white;
 }
 
-@media (min-width: 450px){
+@media (min-width: 550px){
     #colours {
         flex-direction: row;
     }
@@ -127,11 +128,18 @@ main {
     
     .large-wrapper {
         display: flex;
+        justify-content: center;
         width: 100%;
+        height: 70vh;
     }
     
     .colours-menu {
         margin: 1em;
+        width: 20%;
+    }
+    
+    #colours {
+        width: 80%;
     }
     
     .colour-box {

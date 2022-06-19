@@ -6,7 +6,7 @@ let btn = document.getElementById("start-btn");
 let colourDiv = document.getElementById("colours");
 
 let colours = [];
-let length = 10;
+let length = 9;
 
 let hex = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"];
 
@@ -16,19 +16,20 @@ btn.addEventListener("click", function(){
     let reddiff = getDiff(colour1[0], colour2[0]);
     let greendiff = getDiff(colour1[1], colour2[1]);
     let bluediff = getDiff(colour1[2], colour2[2]);
-    for(let i=0; i<length; i++){
-        let red = colour1[0]+i*reddiff;
-        let green = colour1[1]+i*greendiff;
-        let blue = colour1[2]+i*bluediff;
+    
+    for(let i=0; i<=length; i++){
+        let red = Math.round(colour1[0]+i*reddiff);
+        let green = Math.round(colour1[1]+i*greendiff);
+        let blue = Math.round(colour1[2]+i*bluediff);
         colours.push(`<p class="colour-box" style="background: rgb(${red},${green},${blue});">${rgbToHex(red, green, blue)}</p>`)
     }
     colourDiv.innerHTML = colours.join("");
     colours = [];
-})
+});
 
 function getDiff(c1, c2){
     let num = c2-c1;
-    return Math.floor(num/length);
+    return num/length;
 }
 
 function hexToRGB(c){
@@ -66,4 +67,8 @@ function decToHex(num){
     let second = num%16;
     sum = hex[first] + hex[second];
     return sum;
+}
+
+function test(){
+    btn.style.background = "#0000ff";
 }
