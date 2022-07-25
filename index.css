@@ -89,6 +89,7 @@ main {
     color: #fff;
     font-weight: bold;
     font-family: 'Quicksand', sans-serif;
+    writing-mode: vertical-lr;
     text-shadow: 0 0 10px black;
     margin: 0;
     border: none;
