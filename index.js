@@ -21,7 +21,7 @@ btn.addEventListener("click", function(){
         let red = Math.round(colour1[0]+i*reddiff);
         let green = Math.round(colour1[1]+i*greendiff);
         let blue = Math.round(colour1[2]+i*bluediff);
-        colours.push(`<p class="colour-box" style="background: rgb(${red},${green},${blue});">${rgbToHex(red, green, blue)}</p>`)
+        colours.push(`<p onclick="copyValue(this)" class="colour-box" style="background: rgb(${red},${green},${blue});">${rgbToHex(red, green, blue)}</p>`)
     }
     colourDiv.innerHTML = colours.join("");
     colours = [];
@@ -69,6 +69,17 @@ function decToHex(num){
     return sum;
 }
 
-function test(){
-    btn.style.background = "#0000ff";
+function copyValue(element){
+    let copyText = element.textContent;
+    var el = document.createElement('textarea');
+    // Creating a textfield for copying to clipboard
+    el.value = copyText;
+    // Set non-editable to avoid focus and move outside of view
+    el.setAttribute('readonly', '');
+    el.style = {position: 'absolute', left: '-9999px'};
+    document.body.appendChild(el);
+    
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
 }

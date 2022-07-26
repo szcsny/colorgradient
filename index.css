@@ -27,6 +27,12 @@ main {
     justify-content: space-between;
 }
 
+.instructions {
+    font-family: 'Quicksand',sans-serif;
+    color: #fff;
+    margin: 0;
+}
+
 #colour1,
 #colour2 {
     border: none;
@@ -96,6 +102,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .colour-box:hover {
